@@ -1,0 +1,46 @@
+-- Example query to get all students
+select * from cpt.students;
+
+
+-- Please finish the query to get only the first 3 rows
+select * from cpt.students limit 3;
+"1001"	"Emily"	"Johson"	"emily.johnson@mainecc.edu"
+"1002"	"Michael"	"Smith"	"michael.smith@mainecc.edu"
+"1003"	"Sarah"	"Brown"	"sarah.brown@mainecc.edu"
+
+
+-- Please finish the query to get only the last 3 rows
+select * from cpt.students order by student_id desc limit 3;
+"1008"	"James"	"Rodriguez"	"james.rodriguez.mainecc.edu"
+"1009"	"Olivia"	"Wilson"	"olivia.wilson@mainecc.edu"
+"1010"	"William"	"Anderson"	"william.anderson@mainecc.edu"
+
+-- Please select the student with the highest student_id
+select * from cpt.students order by student_id desc limit 1;
+"1010"	"William"	"Anderson"	"william.anderson@mainecc.edu"
+
+-- Please select only fields first_name and last_name
+select first_name, last_name from cpt.students order by student_id desc limit 1;
+"Emily"	"Johson"
+"Michael"	"Smith"
+"Sarah"	"Brown"
+"David"	"Williams"
+"Jessica"	"Jones"
+"Daniel"	"Garcia"
+"Laura"	"Martinez"
+"James"	"Rodriguez"
+"Olivia"	"Wilson"
+"William"	"Anderson"
+
+-- Please find any students without an "@" in the email
+select * from cpt.students where email not like '%@%';
+"1005"	"Jessica"	"Jones"	"jessica.jones&mainecc.edu"
+"1008"	"James"	"Rodriguez"	"james.rodriguez.mainecc.edu"
+
+-- Please find any students without a "." in the email
+select * from cpt.students where email not like '%.%';
+
+
+-- Please select any students with the first name Emily
+select * from cpt.students where first_name = 'Emily';
+"1001"	"Emily"	"Johson"	"emily.johnson@mainecc.edu"
